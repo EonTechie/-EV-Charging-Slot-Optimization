@@ -1,0 +1,35 @@
+----------
+TestCase 1:
+-----------
+Interval: <Interval>[1, 5)
+AResources: 
+resourceId:10, quality:5, List<Time> forbiddenTimeSlots=[<Time>(5,10)]
+resourceId:11, quality:10, List<Time> forbiddenTimeSlots=[<Time>(1,2), <Time>(3,5)]
+BResources: 
+resourceId:20, quality:100, List<Time> forbiddenTimeSlots=[<Time>(5,10)]
+Result: AResources: <Map>{<AResourceId>11=[<Interval>{begin=2, end=3}], <AResourceId>10=[<Interval>{begin=2, end=3}]}
+	BResources: <Map>{<BResourceId>21=[<Interval>{begin=1, end=5}]}
+----------
+TestCase 2:
+-----------
+Interval: <Interval>[5, 55)
+AResources: 
+resourceId:10, quality:100, List<Time> forbiddenTimeSlots=[<Time>(1,10)]
+resourceId:11, quality:1,   List<Time> forbiddenTimeSlots=[<Time>(15,20)]
+BResources: 
+resourceId:21, quality:5, List<Time> forbiddenTimeSlots=[<Time>(10,15)]
+Result: AResources: <Map>{<AResourceId>10=[<Interval>{begin=10, end=55}], <AResourceId>11=[<Interval>{begin=5, end=15}, <Interval>{begin=20, end=55}]}
+	BResources: <Map>{<BResourceId>21=[<Interval>{begin=5, end=10}, <Interval>{begin=15, end=55}]}
+----------
+TestCase 3:
+-----------
+Interval: <Interval>[5, 65)
+AResources: 
+resourceId:10, quality:100, List<Time> forbiddenTimeSlots=[<Time>(1,10)]
+resourceId:11, quality:1,   List<Time> forbiddenTimeSlots=[<Time>(15,20)]
+BResources: 
+resourceId:21, quality:150, List<Time> forbiddenTimeSlots=[<Time>(10,15)]
+resourceId:22, quality:25,  List<Time> forbiddenTimeSlots=[<Time>(15,20)]
+Result: AResources: <Map>{<AResourceId>10=[<Interval>{begin=10, end=65}], <AResourceId>11=[<Interval>{begin=5, end=15}, <Interval>{begin=20, end=65}]}
+	BResources: <Map>{<BResourceId>21=[<Interval>{begin=5, end=10}, <Interval>{begin=15, end=65}], <BResourceId>22=[<Interval>{begin=5, end=15}, <Interval>{begin=20, end=65}]}
+----------

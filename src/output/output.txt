@@ -1,0 +1,40 @@
+Interval: <Interval>[begin=5, end=100)
+AResources: [
+resourceId:10, quality:100, List<Time> forbiddenTimeSlots=[<Time>(1,10), <Time>(15,20)], 
+resourceId:12, quality:15, List<Time> forbiddenTimeSlots=[<Time>(15,21)], 
+resourceId:11, quality:1, List<Time> forbiddenTimeSlots=[<Time>(100,111)]]
+
+AResources results: {10=[<Interval>[begin=10, end=15), <Interval>[begin=20, end=100)], 12=[<Interval>[begin=5, end=15), <Interval>[begin=21, end=100)], 11=[<Interval>[begin=5, end=100)]}
+BResources: [
+resourceId:21, quality:150, List<Time> forbiddenTimeSlots=[<Time>(5,7), <Time>(8,9), <Time>(43,45), <Time>(55,77), <Time>(101,125)], 
+resourceId:22, quality:25, List<Time> forbiddenTimeSlots=[<Time>(15,17), <Time>(120,130)]]
+BResources results: {21=[<Interval>[begin=7, end=8), <Interval>[begin=9, end=43), <Interval>[begin=45, end=55), <Interval>[begin=77, end=100)], 22=[<Interval>[begin=5, end=15), <Interval>[begin=17, end=100)]}
+
+Interval1: <Interval>[begin=1, end=5)
+AResources1: [
+resourceId:11, quality:10, List<Time> forbiddenTimeSlots=[<Time>(1,2), <Time>(3,5)], 
+resourceId:10, quality:5, List<Time> forbiddenTimeSlots=[<Time>(5,10)]]
+AResources results1: {11=[<Interval>[begin=2, end=3)], 10=[<Interval>[begin=1, end=5)]}
+BResources1: [
+resourceId:21, quality:100, List<Time> forbiddenTimeSlots=[<Time>(5,10)]]
+BResources results1: {21=[<Interval>[begin=1, end=5)]}
+
+Interval2: <Interval>[begin=5, end=55)
+AResources2: [
+resourceId:10, quality:100, List<Time> forbiddenTimeSlots=[<Time>(1,10)], 
+resourceId:11, quality:1, List<Time> forbiddenTimeSlots=[<Time>(15,20)]]
+AResources results2: {10=[<Interval>[begin=10, end=55)], 11=[<Interval>[begin=5, end=15), <Interval>[begin=20, end=55)]}
+BResources2: [
+resourceId:21, quality:5, List<Time> forbiddenTimeSlots=[<Time>(10,15)]]
+BResources results2: {21=[<Interval>[begin=5, end=10), <Interval>[begin=15, end=55)]}
+
+Interval3: <Interval>[begin=5, end=65)
+AResources3: [
+resourceId:10, quality:100, List<Time> forbiddenTimeSlots=[<Time>(1,10)], 
+resourceId:11, quality:1, List<Time> forbiddenTimeSlots=[<Time>(15,20)]]
+AResources results3: {10=[<Interval>[begin=10, end=65)], 11=[<Interval>[begin=5, end=15), <Interval>[begin=20, end=65)]}
+BResources3: [
+resourceId:21, quality:150, List<Time> forbiddenTimeSlots=[<Time>(10,15)], 
+resourceId:22, quality:25, List<Time> forbiddenTimeSlots=[<Time>(15,20)]]
+BResources results3: {21=[<Interval>[begin=5, end=10), <Interval>[begin=15, end=65)], 22=[<Interval>[begin=5, end=15), <Interval>[begin=20, end=65)]}
+
