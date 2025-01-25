@@ -1,0 +1,33 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JUnit Jupiter: Test kütüphanesi
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.8.2'
+
+    // Guava: Yardımcı kütüphane
+    implementation 'com.google.guava:guava:31.1-jre'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+application {
+    mainClass = 'app.EVChargingApp'
+}
+
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+
+
